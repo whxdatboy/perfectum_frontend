@@ -1,0 +1,48 @@
+.types {
+  padding-top: 0;
+
+  &__container {
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+  }
+
+  &-item {
+    position: relative;
+    display: block;
+    width: calc(100% / 2);
+    overflow: hidden;
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    &::after {
+      content: '';
+      @include coverdiv;
+      pointer-events: none;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+
+    img {
+      transform: scale(1);
+      transition: transform 0.55s var(--ease);
+    }
+
+    &__name {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 48px;
+      letter-spacing: 0.15em;
+      color: #fff;
+      transform: translate(-50%, -50%);
+      text-transform: uppercase;
+      z-index: 3;
+      font-family: $russo;
+    }
+  }
+}

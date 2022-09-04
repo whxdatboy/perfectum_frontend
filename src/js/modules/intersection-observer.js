@@ -37,16 +37,6 @@ export const initIntersectionObserver = () => {
                 prevEl: arrowPrev,
               },
             });
-
-            function changeCardSlider () {
-              if(window.innerWidth <= 1100) {
-                container.swiper.allowTouchMove = false;
-              } else if (window.innerWidth >= 1101) {
-                container.swiper.allowTouchMove = true;
-              }
-            }
-
-            withBreakpoint(changeCardSlider, 743)
           }
           observer.unobserve(item.target);
           // console.log('Перестал следить за карточкой')

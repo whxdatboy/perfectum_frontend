@@ -18,19 +18,19 @@ class Tabs {
     if (this.tabs) {
       this.tabsList.addEventListener('click', (e) => {
         if (e.target.closest('.tabs-item-link')) {
+          e.preventDefault();
           let tabData = e.target.closest('.tabs-item-link').dataset.tabsOpen
 
           this.tabsItems.forEach(el => {el.classList.remove('tabs-item-active')})
           e.target.closest('.tabs-item').classList.add('tabs-item-active')
           this.tabsContent.forEach(el => { el.classList.remove('tabs-content-active') })
-
           this.tabsWrap.querySelector(`[data-tabs=${tabData}]`).classList.add('tabs-content-active')
         }
       })
     }
   }
 }
-let initTabs = ()=>{
+export const initTabs = () =>{
   document.querySelectorAll('.tabs').forEach(tab => {
     const tabs = new Tabs(tab, {})
   })

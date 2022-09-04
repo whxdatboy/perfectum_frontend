@@ -5,21 +5,23 @@
 // colors
 $accent: #2B4A39;
 $accentDark: #122D1E;
+$yellow: #EDD257;
 
 $grey: #4B514D;
 $light-grey: #F5F5F5;
 $textDark: #000;
 
 // fonts
-$manrope: 'Manrope', sans-serif;
-$font: $manrope;
+$mont: 'Montserrat', sans-serif;
+$russo: 'RussoOne', sans-serif;
+$font: $mont;
 
 // grid and responsive
-$container: 1730px;
+$container:  1140px;
 $columns: 12;
 $gap: 30px;
 $halfGap: ($gap / 2);
-$fields: 95px;
+$fields: 150px;
 
 $z-index: (
         header: 100,

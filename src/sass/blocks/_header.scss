@@ -1,0 +1,92 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 60px;
+  z-index: 100;
+  color: #fff;
+
+  &__container {
+    padding-left: 46px;
+    padding-right: 47px;
+    display: flex;
+
+  }
+
+  &__logo {
+    font-size: 44px;
+    margin-right: 12px;
+    max-width: max-content;
+  }
+
+  &__nav {
+    padding-top: 7px;
+    margin: 0 50px;
+    max-width: calc(100% - 371px);
+    width: 100%;
+
+    &-list {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-item {
+      width: max-content;
+
+      &:hover {
+        .header__nav-link {
+          &::after {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+        }
+      }
+
+      .chevron-down {
+        margin-bottom: 12px;
+        
+        &::before,
+        &::after {
+          background-color: #fff;
+        }
+      }
+    }
+
+    &-link {
+      position: relative;
+      font-weight: 300;
+      display: block;
+      width: 100%;
+      font-size: 16px;
+      padding-bottom: 7px;
+      color: #fff;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 2px;
+        width: calc(100% - 4px);
+        height: 1px;
+        background-color: #fff;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.35s var(--ease);
+      }
+    }
+  }
+
+  &__phone {
+    padding-top: 10px;
+    margin-left: auto;
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+  }
+
+  .popover {
+    display: none;
+  }
+}

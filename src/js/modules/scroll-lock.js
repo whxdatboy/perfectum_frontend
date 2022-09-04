@@ -1,5 +1,3 @@
-import {scrollbar} from "./scrollbar";
-
 const div = document.createElement('div');
 div.classList.add('js-scroll')
 div.style.overflowY = 'auto';
@@ -30,7 +28,6 @@ export const lockScroll = () => {
                 document.body).scrollTop;
 
         body.classList.add("scroll-locked");
-        scrollbar.updatePluginOptions("stopScroll", { scroll: false })
         locked = true;
     }
 };
@@ -44,6 +41,5 @@ export const unlockScroll = () => {
         body.style.paddingRight = '';
         header.style.paddingRight = '';
         locked = false;
-        scrollbar.updatePluginOptions("stopScroll", { scroll: true })
     }
 };

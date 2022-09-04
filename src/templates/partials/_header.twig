@@ -1,32 +1,56 @@
+{% set nav = [
+  {link: 'Главная'},
+  {link: 'Мебель на заказ'},
+  {link: 'Кухни'},
+  {link: 'Фасады'},
+  {link: 'Наши работы'},
+  {link: 'Клиентам'},
+  {link: 'О нас'},
+  {link: 'Контакты'}
+] %}
+
 <!-- start header -->
 <header class="header">
   <div class="container header__container">
-    <div class="logo">
-      {{ mixins.logo() }}
+    <div class="logo header__logo">
+      {{ mixins.icon('logo') }}
     </div>
 
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__list-item">
-          <a href="#about" class="nav__list-link">О компании</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="#product" class="nav__list-link">Продукция</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="#contacts" class="nav__list-link">Контакты</a>
-        </li>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        {% for item in nav %}
+          {% if item.link === 'Клиентам' %}
+            <li class="header__nav-item flex-fe popover-open">
+              <a href="#" class="header__nav-link">
+                {{ item.link }}
+              </a>
+              <span class="chevron-down"></span>
+              <div class="popover">
+                <ul class="popover-list">
+                  <li class="popover-list__item">
+                    <a href="#">О компании</a>
+                  </li>
+                  <li class="popover-list__item">
+                    <a href="#">Акции</a>
+                  </li>
+                  <li class="popover-list__item">
+                    <a href="#">Сотрудничество</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          {% else%}
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">
+                {{ item.link }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
       </ul>
     </nav>
 
-    <div class="header__block">
-      <a href="#" class="ui-btn ui-btn--primary" data-modal-open="callback">
-        {{ mixins.icon('message') }}
-        <span class="ui-btn--hide">
-        Связаться с нами
-      </span>
-      </a>
-    </div>
+    <a href="tel:+79371403815" class="header__phone">+7 937 140 38 15</a>
   </div>
 </header>
 <!-- end header -->

@@ -1,0 +1,139 @@
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    z-index: 10;
+  }
+
+  &-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+
+    * {
+      user-select: none;
+    }
+
+    &-slide {
+      img {
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        background-color: rgba(0, 0, 0, 0.6);
+        pointer-events: none;
+      }
+    }
+
+    &-button {
+      &-prev,
+      &-next {
+        font-size: 20px;
+        height: 20px;
+        .icon {
+          color: transparent;
+          stroke: #fff;
+          stroke-width: 1px;
+        }
+      }
+    }
+
+    &-pagination {
+      position: static;
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+
+      &-divider {
+        margin: 0 5px;
+      }
+    }
+
+    &-actions {
+      position: absolute;
+      bottom: 65px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 15;
+      display: flex;
+      margin-left: -10px;
+    }
+
+    &-navigation {
+      display: flex;
+      align-items: center;
+      margin-right: 38px;
+
+      &-divider {
+        font-size: 38px;
+        height: 38px;
+        margin: 0 20px;
+      }
+    }
+  }
+
+  &__block {
+    align-self: center;
+    margin: 0 auto;
+
+    &-title {
+      margin-left: 20px;
+      position: relative;
+      color: #fff;
+      text-align: center;
+      font-size: 48px;
+      letter-spacing: 0.21em;
+      line-height: 1;
+      margin-bottom: 15px;
+      &--blured {
+        margin-left: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: blur(4px);
+        user-select: none;
+      }
+    }
+
+    &-subtitle {
+      margin-bottom: 15px;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .ui-btn {
+      max-width: 289px;
+      margin: 0 auto;
+    }
+  }
+
+}

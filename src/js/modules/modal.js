@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import {lockScroll, unlockScroll} from "./scroll-lock";
 import {$header} from "../constants";
-import Scrollbar from "smooth-scrollbar";
 
 class Modal {
     constructor() {
@@ -21,8 +20,6 @@ class Modal {
         const $modal = $(`[data-modal=${id}]`);
         const modal = document.querySelector(`[data-modal=${id}]`)
         const eventModalOpen = new Event('modal-open');
-
-        Scrollbar.init(modal.querySelector('.js-section__content'))
 
         if(lock){
             lockScroll();
@@ -107,8 +104,6 @@ class Modal {
                 }
             }, this.closeTimeout);
         }
-
-        Scrollbar.destroy(modal.querySelector('.js-section__content'))
 
         this.doc.trigger('modal-close', [id]);
         document.dispatchEvent(eventCloseModal)

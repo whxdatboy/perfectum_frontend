@@ -17,8 +17,17 @@
 //libs
 //@import './libs/fancybox';
 
-// BLOCKS
 
+@import "./ui/ui-btn";
+
+// BLOCKS
+@import "./blocks/header";
+@import "./blocks/footer";
+@import "./blocks/hero";
+@import "./blocks/sections";
+@import "./blocks/category";
+@import "./blocks/why";
+@import "./blocks/types";
 
 //swiper
 @import 'node_modules/swiper/swiper';

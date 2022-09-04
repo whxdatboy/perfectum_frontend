@@ -85,9 +85,6 @@
     "@babel/runtime": "^7.17.9",
     "gulp-version-filename": "^2.0.0",
     "gulp-version-number": "^0.2.4",
-    "nouislider": "^15.6.0",
-    "simplebar": "^5.3.6",
-    "smooth-scrollbar": "^8.7.5",
     "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^8.1.4",
     "vanilla-lazyload": "^17.8.1"
