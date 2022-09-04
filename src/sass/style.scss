@@ -1,0 +1,37 @@
+// LIBS
+// @import 'normalize.css/normalize';
+//@import 'swiper/src/swiper';
+//@import 'nouislider/dist/nouislider';
+
+// VARIABLES AND MIXINS
+@import './base/variables';
+@import './base/mixins';
+
+// DEFAULTS
+@import './base/fonts';
+@import './base/normalize';
+@import './generated/sprite-svg';
+@import './base/common';
+@import './base/typography';
+
+//libs
+//@import './libs/fancybox';
+
+// BLOCKS
+
+
+//swiper
+@import 'node_modules/swiper/swiper';
+@import 'node_modules/swiper/modules/pagination/pagination';
+@import 'node_modules/swiper/modules/scrollbar/scrollbar';
+@import 'node_modules/swiper/modules/free-mode/free-mode';
+@import 'node_modules/swiper/modules/mousewheel/mousewheel';
+
+// HELPERS
+@import './base/helpers';
+@import './base/loader';
+
+
+
+
+

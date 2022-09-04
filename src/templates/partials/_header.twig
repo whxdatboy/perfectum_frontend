@@ -1,0 +1,32 @@
+<!-- start header -->
+<header class="header">
+  <div class="container header__container">
+    <div class="logo">
+      {{ mixins.logo() }}
+    </div>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__list-item">
+          <a href="#about" class="nav__list-link">О компании</a>
+        </li>
+        <li class="nav__list-item">
+          <a href="#product" class="nav__list-link">Продукция</a>
+        </li>
+        <li class="nav__list-item">
+          <a href="#contacts" class="nav__list-link">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header__block">
+      <a href="#" class="ui-btn ui-btn--primary" data-modal-open="callback">
+        {{ mixins.icon('message') }}
+        <span class="ui-btn--hide">
+        Связаться с нами
+      </span>
+      </a>
+    </div>
+  </div>
+</header>
+<!-- end header -->

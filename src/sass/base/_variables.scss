@@ -1,0 +1,41 @@
+:root {
+  --ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+// colors
+$accent: #2B4A39;
+$accentDark: #122D1E;
+
+$grey: #4B514D;
+$light-grey: #F5F5F5;
+$textDark: #000;
+
+// fonts
+$manrope: 'Manrope', sans-serif;
+$font: $manrope;
+
+// grid and responsive
+$container: 1730px;
+$columns: 12;
+$gap: 30px;
+$halfGap: ($gap / 2);
+$fields: 95px;
+
+$z-index: (
+        header: 100,
+        modal: 300
+);
+
+$break_xl: 1640px;
+$break_mac: 1536px;
+$break_lg: 1279px;
+$break_ipad: 1132px;
+$break_md: 1100px;
+$break_sm: 743px;
+$break_xs: 575px;
+$break_xxs: 449px;
+
+
+$shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+
+$easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);

@@ -1,0 +1,17 @@
+{% import "data/_data.twig" as data %}
+{% import "partials/_mixins.twig" as mixins %}
+
+<div class="modal modal--details" data-modal="{{ modalName }}">
+  <div class="modal--bg"></div>
+  <div class="modal__inner" data-modal-inner="{{ modalName }}">
+    <div class="modal__close" data-modal-close="{{ modalName }}">
+      {{ mixins.icon('close') }}
+    </div>
+
+    <div class="modal-body">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+  </div>
+</div>
