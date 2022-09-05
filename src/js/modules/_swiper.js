@@ -55,11 +55,15 @@ export function initSliders () {
       },
       on: {
         init: (swiper) => {
-          currentSlide.innerText = '01';
-          allSlides.innerText = `0${slides.length}`
+          if (currentSlide) {
+            currentSlide.innerText = '01';
+            allSlides.innerText = `0${slides.length}`
+          }
         },
         slideChange: swiper => {
-          currentSlide.innerText = `0${swiper.realIndex + 1}`
+          if (currentSlide) {
+            currentSlide.innerText = `0${swiper.realIndex + 1}`
+          }
         }
       }
     })

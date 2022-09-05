@@ -7,6 +7,7 @@
   font-weight: 700;
   transition: opacity 0.35s var(--ease);
   line-height: 1;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.85;
@@ -15,5 +16,16 @@
   &--yellow {
     background-color: $yellow;
     color: #000;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+  }
+
+  &--black {
+    background-color: #000;
+    color: #fff;
   }
 }

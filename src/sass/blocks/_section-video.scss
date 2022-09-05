@@ -1,0 +1,33 @@
+.section-video {
+  padding-bottom: 100px;
+  background-color: #F9F9F9;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    margin-top: 20px;
+    line-height: 1.35;
+  }
+
+  &__col {
+    max-width: 525px;
+  }
+
+  &__video {
+    position: relative;
+    max-width: 508px;
+    width: 100%;
+    @include ratio(508, 288)
+  }
+
+  .ui-btn {
+    margin-top: 25px;
+    max-width: 180px;
+    padding: 10px 0 8px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}

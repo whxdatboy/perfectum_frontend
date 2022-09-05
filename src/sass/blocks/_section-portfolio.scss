@@ -1,0 +1,36 @@
+.section-portfolio {
+  padding-top: 58px;
+
+  .category__tabs-content {
+    margin-top: 61px;
+    visibility: visible;
+    display: flex;
+    opacity: 1;
+
+    .swiper {
+      max-width: 938px;
+
+      &-button {
+        &-prev,
+        &-next {
+          max-width: 96px;
+        }
+      }
+
+      &-slide {
+        position: relative;
+        width: 100%;
+        height: auto;
+        @include ratio(938, 516);
+
+        &-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
