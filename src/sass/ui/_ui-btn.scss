@@ -9,6 +9,10 @@
   line-height: 1;
   cursor: pointer;
 
+  @include r(1024px) {
+    padding: 19px 50px;
+  }
+
   &:hover {
     opacity: 0.85;
   }

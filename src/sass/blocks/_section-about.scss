@@ -1,10 +1,30 @@
 .section-about {
+  @include r(1024px) {
+    position: relative;
+  }
+
+  @include r(768px) {
+    padding-top: 56px;
+  }
+
   &__wrap {
     display: flex;
     justify-content: space-between;
     margin-top: 52px;
     padding-bottom: 2px;
     border-bottom: 1px solid #CFCFCF;
+
+    @include r(768px) {
+      margin-top: 30px;
+    }
+  }
+
+  .section__title {
+    @include r(1024px) {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+    }
   }
 
   &__title {
@@ -12,6 +32,10 @@
     line-height: 1.15;
     font-weight: 400;
     margin-bottom: 10px;
+
+    @include r(768px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__text {
@@ -19,6 +43,18 @@
     color: rgba(0, 0, 0, 0.75);
     max-width: 535px;
     margin-bottom: 7px;
+
+    @include r(1024px) {
+      color: #fff;
+    }
+  }
+
+  &__col {
+    @include r(1024px) {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+    }
   }
 
   &__img {
@@ -27,6 +63,29 @@
     width: 100%;
     height: 100%;
     @include ratio(467, 490);
+
+    @include r(1024px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      z-index: 1;
+    }
+
+    &::before {
+      @include r(1024px) {
+        position: absolute;
+        padding-top: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+      }
+    }
 
     img {
       @include coverdiv;
@@ -40,11 +99,27 @@
     flex-flow: row wrap;
     max-width: 580px;
     margin-top: 67px;
+
+    @include r(768px) {
+      margin-top: 40px;
+    }
+
+    @include sm-screen {
+      max-width: 100%;
+    }
   }
 
   &__item {
     max-width: 280px;
     margin-bottom: 60px;
+
+    @include sm-screen {
+      max-width: calc(100% / 2 - 15px);
+    }
+
+    @include xs-screen {
+      max-width: 100%;
+    }
 
     &-num {
       max-width: 257px;
@@ -52,13 +127,27 @@
       font-size: 18px;
       line-height: 1.15;
       padding-bottom: 10px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.65);;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.65);
+
+      @include r(1024px) {
+        border-color: rgba(255, 255, 255, 0.65);
+      }
+
+      @include sm-screen {
+        max-width: 100%;
+      }
     }
 
     &-text {
       margin-top: 7px;
       font-size: 16px;
       line-height: 1.25;
+
+      br {
+        @include sm-screen {
+          display: none;
+        }
+      }
     }
   }
 }

@@ -10,25 +10,82 @@
   &__container {
     padding-left: 46px;
     padding-right: 47px;
+    max-width: 1440px;
     display: flex;
 
+    @include r(1024px) {
+      justify-content: space-between;
+    }
   }
 
   &__logo {
     font-size: 44px;
     margin-right: 12px;
     max-width: max-content;
+
+    @include r(1440px) {
+      font-size: 36px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 0;
+    width: 100%;
+    max-width: calc(100% - 141px);
+
+    @include r(1024px) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 100%;
+      width: 100vw;
+      height: 100vh;
+      flex-flow: column;
+      justify-content: center;
+      z-index: 20;
+      background-color: rgba(0, 0, 0, 0.53);
+      backdrop-filter: blur(7px);
+      transform: translateX(150%);
+    }
+
+    &.is-active {
+      @include r(1024px) {
+        transform: translate(0);
+        transition: transform 0.35s var(--ease);
+      }
+    }
   }
 
   &__nav {
     padding-top: 7px;
     margin: 0 50px;
-    max-width: calc(100% - 371px);
+    max-width: calc(100% - 231px);
     width: 100%;
+
+    @include r(1440px) {
+      margin: 0 auto;
+      max-width: calc(100% - 154px);
+    }
+
+    @include r(1024px) {
+      margin: 0;
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     &-list {
       display: flex;
       justify-content: space-between;
+
+      @include r(1024px) {
+        display: flex;
+        flex-flow: column;
+      }
     }
 
     &-item {
@@ -45,6 +102,15 @@
 
       .chevron-down {
         margin-bottom: 12px;
+        margin-left: 2px;
+
+        @include r(1440px) {
+          margin-bottom: 10px;
+        }
+
+        @include r(1024px) {
+          display: none;
+        }
         
         &::before,
         &::after {
@@ -61,6 +127,17 @@
       font-size: 16px;
       padding-bottom: 7px;
       color: #fff;
+
+      @include r(1440px) {
+        font-size: 14px;
+      }
+
+      @include r(1024px) {
+        font-size: 20px;
+        font-weight: 500;
+        padding-bottom: 0;
+        margin-bottom: 30px;
+      }
       
       &::after {
         content: '';
@@ -73,6 +150,10 @@
         transform: scaleX(0);
         transform-origin: right;
         transition: transform 0.35s var(--ease);
+
+        @include r(1024px) {
+          display: none;
+        }
       }
     }
   }
@@ -84,9 +165,45 @@
     color: #fff;
     font-size: 16px;
     letter-spacing: 0.01em;
+
+    @include r(1440px) {
+      padding-top: 7px;
+      font-size: 14px;
+    }
+
+    @include r(1024px) {
+      margin: 0 auto;
+      padding-top: 18px;
+      font-size: 20px;
+      font-weight: 700;
+    }
   }
 
   .popover {
     display: none;
+  }
+
+  &__hamb {
+    display: none;
+
+    @include r(1024px) {
+      position: relative;
+      padding-top: 6px;
+      display: flex;
+      flex-flow: column;
+      z-index: 30;
+    }
+
+    &.is-active {
+      .icon {
+        margin-bottom: 15px;
+      }
+    }
+
+    .icon {
+      margin-bottom: 5px;
+      font-size: 3px;
+      transition: margin-bottom 0.25s var(--ease);
+    }
   }
 }

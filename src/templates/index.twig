@@ -85,26 +85,34 @@
         </div>
 
         <div class="category__tabs tabs">
-            <ul class="category__tabs-list tabs-list">
-                <li class="category__tabs-item tabs-item tabs-item-active">
-                    <a href="#" class="category__tabs-link tabs-item-link" data-tabs-open="classic">
-                        Классика
-                    </a>
-                </li>
-                <li class="category__tabs-item tabs-item">
-                    <a href="#" class="category__tabs-link tabs-item-link" data-tabs-open="neoclassic">
-                        Неоклассика
-                    </a>
-                </li>
-                <li class="category__tabs-item tabs-item">
-                    <a href="#" class="category__tabs-link tabs-item-link" data-tabs-open="modern">
-                        Модерн
-                    </a>
-                </li>
-            </ul>
+            <div class="select category__tabs-select">
+                <div class="select-choose category__tabs-select-choose">
+                    <span class="text">Выберите категорию </span> {{ mixins.icon('chevron-right') }}
+                </div>
+                <ul class="category__tabs-list tabs-list select-list">
+                    <li class="category__tabs-item tabs-item tabs-item-active">
+                        <a href="#" class="category__tabs-link tabs-item-link" data-tabs-open="classic">
+                            Классика
+                        </a>
+                    </li>
+                    <li class="category__tabs-item tabs-item">
+                        <a href="#" class="category__tabs-link tabs-item-link" data-tabs-open="neoclassic">
+                            Неоклассика
+                        </a>
+                    </li>
+                    <li class="category__tabs-item tabs-item">
+                        <a href="#" class="category__tabs-link tabs-item-link" data-tabs-open="modern">
+                            Модерн
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div class="category__tabs-wrap tabs-wrap">
                 <div class="category__tabs-content tabs-content tabs-content-active" data-tabs="classic">
                     <button class="swiper-button-prev">
+                        <span class="mob-text">
+                            Предыдущая
+                        </span>
                         {{ mixins.icon('chevron-left') }}
                     </button>
                     <div class="swiper">
@@ -137,6 +145,9 @@
                     </div>
                     <button class="swiper-button-next">
                         {{ mixins.icon('chevron-right') }}
+                        <span class="mob-text">
+                            Следующая
+                        </span>
                     </button>
                     <div class="swiper-info">
                         <div class="swiper-pagination-current"></div>
@@ -146,6 +157,9 @@
                 </div>
                 <div class="category__tabs-content tabs-content" data-tabs="neoclassic">
                     <button class="swiper-button-prev">
+                        <span class="mob-text">
+                            Предыдущая
+                        </span>
                         {{ mixins.icon('chevron-left') }}
                     </button>
                     <div class="swiper">
@@ -178,6 +192,9 @@
                     </div>
                     <button class="swiper-button-next">
                         {{ mixins.icon('chevron-right') }}
+                        <span class="mob-text">
+                            Следующая
+                        </span>
                     </button>
                     <div class="swiper-info">
                         <div class="swiper-pagination-current"></div>
@@ -187,6 +204,9 @@
                 </div>
                 <div class="category__tabs-content tabs-content" data-tabs="modern">
                     <button class="swiper-button-prev">
+                        <span class="mob-text">
+                            Предыдущая
+                        </span>
                         {{ mixins.icon('chevron-left') }}
                     </button>
                     <div class="swiper">
@@ -220,6 +240,9 @@
                     </div>
                     <button class="swiper-button-next">
                         {{ mixins.icon('chevron-right') }}
+                        <span class="mob-text">
+                            Следующая
+                        </span>
                     </button>
                     <div class="swiper-info">
                         <div class="swiper-pagination-current"></div>
@@ -463,6 +486,9 @@
         </h2>
         <div class="category__tabs-content">
             <button class="swiper-button-prev">
+                <span class="mob-text">
+                            Предыдущая
+                        </span>
                 {{ mixins.icon('chevron-left') }}
             </button>
             <div class="swiper">
@@ -511,6 +537,9 @@
             </div>
             <button class="swiper-button-next">
                 {{ mixins.icon('chevron-right') }}
+                <span class="mob-text">
+                            Следующая
+                        </span>
             </button>
         </div>
     </div>

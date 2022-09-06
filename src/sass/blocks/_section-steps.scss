@@ -1,22 +1,42 @@
 .section-steps {
   &__grid {
     margin-top: 60px;
+
+    @include sm-screen {
+      margin-top: 50px;
+    }
   }
 
   &__row {
     display: flex;
 
+    @include sm-screen {
+      flex-flow: column;
+    }
+
     &--second {
       margin-top: 40px;
       justify-content: flex-end;
 
+      @include sm-screen {
+        margin-top: 0;
+      }
+
       .section-steps__item {
         &:first-child {
           margin-right: 87px;
+
+          @include sm-screen {
+            margin-right: 0;
+          }
         }
 
         &:last-child {
           margin-right: 8px;
+
+          @include sm-screen {
+            margin-right: 0;
+          }
         }
       }
     }
@@ -28,8 +48,21 @@
     padding-left: 54px;
     padding-top: 48px;
 
+    @include sm-screen {
+      padding-top: 0;
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
     &:first-child {
       margin-right: 75px;
+
+      @include sm-screen {
+        padding-top: 0;
+        margin-right: 0;
+      }
     }
 
     &-num {
@@ -40,6 +73,15 @@
       font-weight: 900;
       font-size: 83px;
       color: rgba(255, 0, 0, 0.1);
+
+      @include sm-screen {
+        position: static;
+        font-size: 58px;
+        margin-right: 25px;
+        line-height: 1;
+        height: 100%;
+        min-width: 84px;
+      }
     }
 
     &-title {

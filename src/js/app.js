@@ -8,7 +8,8 @@ import {modal} from "./modules/modal";
 import throttle from './modules/_throttle'
 import {inputMask} from "./modules/input-mask";
 import {initTabs} from "./modules/tabs";
-
+import {hambInit, tabsSelectInit} from "./modules/hamb";
+import {withBreakpoint} from "./constants";
 
 
 // import isTouch from './libs/detectTouch';
@@ -23,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //инициализация табов
   initTabs()
+
+  withBreakpoint(hambInit, 768);
+  withBreakpoint(tabsSelectInit, 768);
 
   //инициализация слайдеров через intersection observer
   initIntersectionObserver()

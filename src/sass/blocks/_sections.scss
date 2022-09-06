@@ -1,16 +1,29 @@
 .section {
   padding-top: 100px;
 
+  @include sm-screen {
+    padding-top: 50px;
+  }
+
   &__title {
     font-weight: 500;
     font-size: 30px;
     line-height: 39px;
     margin-bottom: 10px;
+
+    @include r(1024px) {
+      font-size: 24px;
+      line-height: 1.2;
+    }
   }
 
   &__subtitle {
     font-weight: 300;
     font-size: 15px;
     line-height: 1.2;
+
+    @include r(768px) {
+      display: none;
+    }
   }
 }

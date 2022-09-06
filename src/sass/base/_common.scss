@@ -24,6 +24,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .header,
@@ -49,11 +50,16 @@ button {
 
 .container {
   width: 100%;
-  max-width: $container + $fields*2;
-  padding-left: $fields;
-  padding-right: $fields;
+  max-width: 1180px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+
+  @include r(768px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 }
 
 a {
@@ -89,6 +95,24 @@ button {
 .sm-hide {
   @include r(767px) {
     display: none;
+  }
+}
+
+.swiper {
+  &-button {
+    &-prev,
+    &-next {
+      .mob-text {
+        display: none;
+
+        @include sm-screen {
+          display: block;
+          width: 100%;
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+    }
   }
 }
 
@@ -171,6 +195,15 @@ button {
     &::after {
       right: 1px;
       transform: rotate(-45deg);
+    }
+  }
+}
+
+.select {
+  @include sm-screen {
+    .text {
+      max-width: 160px;
+      width: 100%;
     }
   }
 }

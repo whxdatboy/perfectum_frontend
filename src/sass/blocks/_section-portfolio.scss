@@ -1,19 +1,40 @@
 .section-portfolio {
   padding-top: 58px;
 
+  .section__title {
+    @include sm-screen {
+      br {
+        display: none;
+      }
+    }
+  }
+
   .category__tabs-content {
     margin-top: 61px;
     visibility: visible;
     display: flex;
     opacity: 1;
 
+    @include sm-screen {
+      margin-top: 40px;
+    }
+
     .swiper {
-      max-width: 938px;
+      max-width: calc(100% - 192px);
+
+      @include sm-screen {
+        max-width: initial;
+        width: calc(100% + 60px);
+      }
 
       &-button {
         &-prev,
         &-next {
           max-width: 96px;
+
+          @include sm-screen {
+            max-width: 122px;
+          }
         }
       }
 

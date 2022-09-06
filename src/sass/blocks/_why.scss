@@ -15,6 +15,12 @@
     justify-content: space-between;
     flex-flow: wrap;
     margin-top: 50px;
+
+    @include r(604px) {
+      flex-flow: column;
+      margin-top: 35px;
+      margin-bottom: -30px;
+    }
   }
 
   &-img {
@@ -24,7 +30,23 @@
     margin-left: 70px;
     flex-shrink: 0;
     @include ratio(385, 386);
-    
+
+    @include r(1024px) {
+      flex-shrink: 1;
+    }
+
+    @include r(604px) {
+      margin-left: 20px;
+      max-width: 84px;
+      padding-top: 120px;
+      display: flex;
+      margin-right: -30px;
+
+      &::before {
+        display: none;
+      }
+    }
+
     &::after {
       position: absolute;
       top: 0;
@@ -38,23 +60,52 @@
     img {
       @include coverdiv;
       @include img-cover;
+
+      @include r(604px) {
+        position: static;
+        height: 371px;
+      }
     }
   }
 
   &-item {
     width: calc(100% / 2 - 60px);
+    @include r(1024px) {
+      width: calc(100% / 2 - 30px);
+    }
+
+    @include r(604px) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
 
     &:last-child {
       width: calc(100% / 2 - 61px);
+
+      @include r(1024px) {
+        width: calc(100% / 2 - 30px);
+      }
+
+      @include r(604px) {
+        width: 100%;
+      }
     }
 
     &:nth-child(4n+2) {
       margin-bottom: 40px;
+
+      @include r(604px) {
+        margin-bottom: 30px;
+      }
     }
 
     &__title {
       font-size: 20px;
       line-height: 1.2;
+
+      @include sm-screen {
+        font-size: 17px;
+      }
     }
 
     &__text {
@@ -63,6 +114,11 @@
       font-size: 16px;
       line-height: 1.25;
       color: rgba(0, 0, 0, 0.7);
+
+      @include sm-screen {
+        margin-top: 10px;
+        font-size: 14px;
+      }
     }
   }
 }

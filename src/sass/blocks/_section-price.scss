@@ -1,4 +1,7 @@
 .section-price {
+  @include sm-screen {
+    display: none;
+  }
   &__item {
     display: flex;
     align-items: center;

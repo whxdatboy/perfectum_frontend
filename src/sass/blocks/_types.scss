@@ -5,6 +5,10 @@
     padding-left: 0;
     padding-right: 0;
     display: flex;
+
+    @include r(768px) {
+      flex-flow: column;
+    }
   }
 
   &-item {
@@ -13,6 +17,12 @@
     width: calc(100% / 2);
     overflow: hidden;
     @include ratio(720, 567);
+
+    @include r(768px) {
+      @include ratio(768, 567);
+      width: calc(100% + 60px);
+      margin-left: -30px;
+    }
 
     &:hover {
       img {
