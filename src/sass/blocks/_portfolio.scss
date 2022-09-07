@@ -1,0 +1,25 @@
+.portfolio {
+  padding-top: 202px;
+
+  &-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    margin-top: 60px;
+  }
+
+  &-item {
+    display: block;
+    position: relative;
+    width: calc(100% / 3 - 78px);
+    @include ratio(1, 1);
+    margin-bottom: 50px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    img {
+      @include img-cover;
+      @include coverdiv;
+    }
+  }
+}

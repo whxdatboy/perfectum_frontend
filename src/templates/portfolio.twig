@@ -5,6 +5,23 @@
 
 {% block content %}
 
+<section class="portfolio">
+    <div class="container">
+        <h1 class="section__title">
+            Наши работы
+        </h1>
 
+        <div class="portfolio-grid">
+            {% for item in range(0, 12) %}
+                <a href="#" class="portfolio-item">
+                    <picture>
+                        <source srcset="./img/portfolio-item.webp" />
+                        <img src="./img/portfolio-item.jpg" alt="" />
+                    </picture>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 {% endblock %}

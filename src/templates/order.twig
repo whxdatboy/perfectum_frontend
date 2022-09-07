@@ -3,8 +3,148 @@
 
 {% extends "layouts/_layout.twig" %}
 
+{% set grid = [
+    { name: 'КУХНИ' },
+    { name: 'ВАННАЯ', added: 'order-item--less' },
+    { name: 'ФАСАДЫ', added: 'order-item--less' },
+    { name: 'ШКАФЫ' },
+    { name: 'СТЕНОВЫЕ ПАНЕЛИ' },
+    { name: 'МЕЖКОМНАТНЫЕ ДВЕРИ', added: 'order-item--less' },
+    { name: 'ТУМБЫ И КОНСОЛИ', added: 'order-item--less' },
+    { name: 'ГАРДЕРОБНАЯ' },
+    { name: 'ПРИХОЖАЯ' },
+    { name: 'СТОЛЫ', added: 'order-item--less' }
+] %}
+
 {% block content %}
 
+<div class="order-block">
+    <section class="order">
+        <div class="container">
+            <h1 class="section__title">
+                Эксклюзив для каждой комнаты
+            </h1>
+            <div class="section__subtitle">
+                Эстетика и практичность
+            </div>
 
+            <div class="order-grid">
+                {% for item in grid %}
+                    {% if item.added %}
+                        <div class="order-item {{ item.added }}">
+                            <div class="order-item__name">
+                                {{ item.name }}
+                            </div>
+                            <a href="#" class="order-item__img">
+                                <picture>
+                                    <source data-srcset="./img/order-item-{{ loop.index }}.webp" />
+                                    <img class="lazy" data-src="./img/order-item-{{ loop.index }}.jpg" alt="" />
+                                </picture>
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="order-item">
+                            <div class="order-item__name">
+                                {{ item.name }}
+                            </div>
+                            <a href="#" class="order-item__img">
+                                <picture>
+                                    <source data-srcset="./img/order-item-{{ loop.index }}.webp" />
+                                    <img class="lazy" data-src="./img/order-item-{{ loop.index }}.jpg" alt="" />
+                                </picture>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="section section-steps">
+        <div class="container">
+            <h2 class="section__title">
+                Этапы работы
+            </h2>
+
+            <div class="section-steps__grid">
+                <div class="section-steps__row">
+                    <div class="section-steps__item">
+                        <div class="section-steps__item-num">01</div>
+                        <div class="section-steps__item-content">
+                            <div class="section-steps__item-title">Переговоры</div>
+                            <div class="section-steps__item-text">
+                                Вы оставляете заявку на сайте или по<br/>телефону, мы с вами обсуждаем вашу<br/>будущую кухню.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-steps__item">
+                        <div class="section-steps__item-num">02</div>
+                        <div class="section-steps__item-content">
+                            <div class="section-steps__item-title">Выезд замерщика</div>
+                            <div class="section-steps__item-text">
+                                Выезд замерщика и дизайнера с образцами материалов,<br/>
+                                подготовим бесплатный 3D дизайн проект, при необходимости<br/>
+                                дадим советы по ремонту помещения, расположению розеток,<br/>
+                                поможем с подбором бытовой техники. При желании, можно<br/>заключить договор на месте.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-steps__row section-steps__row--second">
+                    <div class="section-steps__item">
+                        <div class="section-steps__item-num">03</div>
+                        <div class="section-steps__item-content">
+                            <div class="section-steps__item-title">Производство</div>
+                            <div class="section-steps__item-text">
+                                Конструктор начинает создание детализированного проекта<br/>
+                                вашей кухни в профессиональном программном<br/>
+                                обеспечении, далее файл отправляется на производство и<br/>
+                                загружается в высокоточные станки с ЧПУ.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-steps__item">
+                        <div class="section-steps__item-num">04</div>
+                        <div class="section-steps__item-content">
+                            <div class="section-steps__item-title">Установка</div>
+                            <div class="section-steps__item-text">
+                                Проверяем, качественно упаковываем и<br/>
+                                бережно доставляем вашу мебель, и<br/>
+                                переходим к сборке. Вы принимаете работу, и<br/>наслаждаетесь новой кухней.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-video">
+        <div class="container">
+            <div class="section-video__wrap">
+                <div class="section-video__col">
+                    <h2 class="section__title">
+                        Видео с<br/>
+                        производства
+                    </h2>
+                    <div class="section-video__text">
+                        Производственная компания полного цикла. Мы&nbsp;создаём мебель с нуля, начиная от&nbsp;разработки чертежей и&nbsp;заканчивая монтажными работами на&nbsp;объекте заказчика. Мы&nbsp;можем изготавливать нестандартные фасады без удорожания, применять уникальные виды фрезеровки по&nbsp;фирменной технологии
+                    </div>
+                    <a href="#" class="ui-btn ui-btn--transparent">
+                        Посмотреть мебель
+                    </a>
+                </div>
+                <div class="section-video__video">
+                    <div class="video">
+                        <div class="video-player">
+
+                        </div>
+                        <div class="video-btn">
+                            {{ mixins.icon('play') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
 {% endblock %}

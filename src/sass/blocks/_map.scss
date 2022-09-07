@@ -3,27 +3,63 @@
   margin-top: 60px;
   @include ratio(1440, 579);
 
+  @include r(1024px) {
+    height: 579px;
+  }
+
+  @include r(768px) {
+    margin-left: -30px;
+    width: calc(100% + 60px);
+  }
+
+  @include xs-screen {
+    height: 360px;
+  }
+
   .map-content {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+
+    @include r(1024px) {
+      object-fit: cover;
+    }
   }
 
   &-block {
     position: absolute;
-    top: 101px;
-    left: 136px;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
     padding: 42px 50px;
     background-color: #fff;
     color: #000;
     max-width: 639px;
     width: 100%;
 
+    @include r(1279px) {
+      padding: 27px 30px;
+      max-width: 450px;
+    }
+
+    @include r(768px) {
+      top: 15px;
+      left: 15px;
+      transform: none;
+      background-color: rgba(255, 255, 255, 0.7);
+      max-width: calc(100% - 30px);
+      padding: 7px 7px 16px;
+    }
+
     &__row {
       &:not(:last-child) {
         margin-bottom: 30px;
+
+        @include r(1024px) {
+          margin-bottom: 20px;
+        }
       }
     }
 
@@ -33,6 +69,10 @@
       letter-spacing: 0.01em;
       line-height: 1.22;
       text-transform: uppercase;
+
+      @include r(1279px) {
+        font-size: 13px;
+      }
     }
 
     &__content {
@@ -42,12 +82,28 @@
       letter-spacing: 0.01em;
       margin-top: 10px;
 
+      @include r(1279px) {
+        font-size: 20px;
+      }
+
+      @include xs-screen {
+        font-size: 16px;
+      }
+
       a {
         font-weight: 600;
         font-size: 25px;
         line-height: 1.22;
         letter-spacing: 0.01em;
         transition: opacity 0.25s ease-in-out;
+
+        @include r(1279px) {
+          font-size: 20px;
+        }
+
+        @include xs-screen {
+          font-size: 16px;
+        }
 
         &:hover {
           opacity: 0.75;
@@ -61,6 +117,10 @@
       letter-spacing: 0.01em;
       color: rgba(0, 0, 0, 0.86);
       margin-top: 5px;
+
+      @include r(1024px) {
+        font-size: 17px;
+      }
     }
   }
 }

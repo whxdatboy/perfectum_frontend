@@ -1,11 +1,16 @@
 .header {
+  --header-color: #fff;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   padding-top: 60px;
   z-index: 100;
-  color: #fff;
+  color: var(--header-color);
+
+  &--dark {
+    --header-color: #000;
+  }
 
   &__container {
     padding-left: 46px;
@@ -114,7 +119,7 @@
         
         &::before,
         &::after {
-          background-color: #fff;
+          background-color: var(--header-color);
         }
       }
     }
@@ -126,7 +131,7 @@
       width: 100%;
       font-size: 16px;
       padding-bottom: 7px;
-      color: #fff;
+      color: var(--header-color);
 
       @include r(1440px) {
         font-size: 14px;
@@ -146,7 +151,7 @@
         left: 2px;
         width: calc(100% - 4px);
         height: 1px;
-        background-color: #fff;
+        background-color: var(--header-color);
         transform: scaleX(0);
         transform-origin: right;
         transition: transform 0.35s var(--ease);
@@ -162,7 +167,7 @@
     padding-top: 10px;
     margin-left: auto;
     display: block;
-    color: #fff;
+    color: var(--header-color);
     font-size: 16px;
     letter-spacing: 0.01em;
 

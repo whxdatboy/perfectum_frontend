@@ -12,6 +12,11 @@
     width: 100%;
     display: flex;
     z-index: 10;
+
+    @include r(768px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &-slider {
@@ -127,6 +132,10 @@
         margin-bottom: 20px;
       }
 
+      @include r(768px) {
+        font-size: 34px;
+      }
+
       &--blured {
         margin-left: 0;
         position: absolute;
@@ -148,6 +157,11 @@
       @include r(1024px) {
         font-size: 15px;
         margin-bottom: 20px;
+      }
+
+      @include r(768px) {
+        max-width: 300px;
+        line-height: 1.25;
       }
     }
 

@@ -10,7 +10,11 @@
 ] %}
 
 <!-- start header -->
+{% if index === true %}
 <header class="header">
+{% else %}
+<header class="header header--dark">
+{% endif %}
   <div class="container header__container">
     <div class="logo header__logo">
       {{ mixins.icon('logo') }}
