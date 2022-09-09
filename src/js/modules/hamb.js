@@ -6,10 +6,11 @@ const mobMenu = () => {
 export const hambInit = () => {
     let init = false;
 
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
         init = true;
         document.querySelector('.header__hamb').addEventListener('click', mobMenu)
-    } else if (window.innerWidth > 768 && init) {
+    } else if (window.innerWidth > 1024 && init) {
+        let init = false;
         document.querySelector('.header__hamb').removeEventListener('click', mobMenu)
     }
 }

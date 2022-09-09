@@ -87,6 +87,7 @@
       display: flex;
       justify-content: space-between;
 
+
       @include r(1024px) {
         display: flex;
         flex-flow: column;
@@ -116,7 +117,7 @@
         @include r(1024px) {
           display: none;
         }
-        
+
         &::before,
         &::after {
           background-color: var(--header-color);
@@ -142,8 +143,9 @@
         font-weight: 500;
         padding-bottom: 0;
         margin-bottom: 30px;
+        --header-color: #fff;
       }
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -181,11 +183,8 @@
       padding-top: 18px;
       font-size: 20px;
       font-weight: 700;
+      --header-color: #fff;
     }
-  }
-
-  .popover {
-    display: none;
   }
 
   &__hamb {
@@ -202,6 +201,10 @@
     &.is-active {
       .icon {
         margin-bottom: 15px;
+
+        @include r(1024px) {
+          --header-color: #fff;
+        }
       }
     }
 
@@ -209,6 +212,58 @@
       margin-bottom: 5px;
       font-size: 3px;
       transition: margin-bottom 0.25s var(--ease);
+      color: var(--header-color);
     }
+  }
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% - 1px);
+  padding: 10px 14px 10px 12px;
+  left: 0;
+  border-radius: 0 0 14px 14px;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0.35s ease-in, opacity 0.35s ease-in;
+
+  &-open {
+    position: relative;
+
+    &:hover {
+      .popover {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &-list {
+
+    &__item {
+
+      a {
+        display: inline-block;
+        padding: 3px 0;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.7);
+        z-index: 2;
+        transition: text-shadow 0.15s ease-in;
+        font-size: 16px;
+
+        &:hover {
+          text-shadow: 0 0 0.04px rgba(0, 0, 0, 0.7);
+        }
+      }
+    }
+  }
+}
+
+.header--dark {
+  .popover {
+    background-color: #F4F4F4;
   }
 }

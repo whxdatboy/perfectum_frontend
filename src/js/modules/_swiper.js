@@ -68,4 +68,19 @@ export function initSliders () {
       }
     })
   })
+
+  document.querySelectorAll('.sales-detail__slider').forEach(el => {
+    const swiperContainer = el.querySelector('.swiper');
+    const prevBtn = el.querySelector('.swiper-button-prev');
+    const nextBtn = el.querySelector('.swiper-button-next');
+
+    const swiper = new Swiper(swiperContainer, {
+      modules: [Navigation],
+      slidesPerView: 'auto',
+      navigation: {
+        prevEl: prevBtn,
+        nextEl: nextBtn
+      }
+    })
+  })
 }

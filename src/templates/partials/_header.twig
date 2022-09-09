@@ -1,12 +1,12 @@
 {% set nav = [
-  {link: 'Главная'},
-  {link: 'Мебель на заказ'},
-  {link: 'Кухни'},
-  {link: 'Фасады'},
-  {link: 'Наши работы'},
-  {link: 'Клиентам'},
-  {link: 'О нас'},
-  {link: 'Контакты'}
+  {link: '/', name: 'Главная'},
+  {link: '/order', name: 'Мебель на заказ'},
+  {link: '/order-2', name: 'Кухни'},
+  {link: '/order-3', name: 'Фасады'},
+  {link: '/portfolio', name: 'Наши работы'},
+  {link: '#', name: 'Клиентам'},
+  {link: '/about', name: 'О нас'},
+  {link: '/contacts', name: 'Контакты'}
 ] %}
 
 <!-- start header -->
@@ -30,30 +30,30 @@
       <nav class="header__nav">
         <ul class="header__nav-list">
           {% for item in nav %}
-            {% if item.link === 'Клиентам' %}
+            {% if item.name === 'Клиентам' %}
               <li class="header__nav-item flex-fe popover-open">
                 <a href="#" class="header__nav-link">
-                  {{ item.link }}
+                  {{ item.name }}
                 </a>
                 <span class="chevron-down"></span>
                 <div class="popover">
                   <ul class="popover-list">
                     <li class="popover-list__item">
-                      <a href="#">О компании</a>
+                      <a href="#" data-text="О компании">О компании</a>
                     </li>
                     <li class="popover-list__item">
-                      <a href="#">Акции</a>
+                      <a href="/sales" data-text="Акции">Акции</a>
                     </li>
                     <li class="popover-list__item">
-                      <a href="#">Сотрудничество</a>
+                      <a href="/cooperation" data-text="Сотрудничество">Сотрудничество</a>
                     </li>
                   </ul>
                 </div>
               </li>
             {% else%}
               <li class="header__nav-item">
-                <a href="#" class="header__nav-link">
-                  {{ item.link }}
+                <a href="{{ item.link }}" class="header__nav-link">
+                  {{ item.name }}
                 </a>
               </li>
             {% endif %}

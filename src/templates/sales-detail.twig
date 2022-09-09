@@ -5,6 +5,72 @@
 
 {% block content %}
 
+<section class="sales-detail">
+    <div class="container">
+        <h1 class="section__title">
+            Акции
+        </h1>
+    </div>
+    <div class="sales-detail__hero">
+        <div class="sales-detail__hero-img">
+            <picture>
+                <source srcset="./img/sales.webp" />
+                <img src="./img/sales.jpg" alt="">
+            </picture>
+        </div>
 
+        <div class="sales-detail__content">
+            <div class="container">
+                <h2 class="sales-detail__title">
+                    Акция 1
+                </h2>
+
+                <a href="/order" class="ui-btn ui-btn--yellow"> Заказать мебель </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="sales-detail__info">
+        <div class="container">
+            <div class="sales-detail__info-wrap">
+                <div class="sales-detail__about">
+                    <h3 class="section__title">
+                        Об акции
+                    </h3>
+
+                    <div class="sales-detail__about-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque in ipsa omnis! Beatae consequatur cumque ea explicabo impedit itaque iure molestiae, placeat quo vel! Aspernatur aut cumque, dolorum error esse est illum necessitatibus non officia perferendis quas repellat sint, voluptate.<br/>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium provident rerum tenetur! Ad aliquam aliquid consequatur delectus distinctio dolore dolorem eum expedita impedit iusto magnam molestiae, natus nostrum quaerat quasi qui quisquam repellendus tempore totam vel.
+                    </div>
+                </div>
+
+                <div class="sales-detail__slider">
+                    <h3 class="section__title">
+                        Другие акции
+                    </h3>
+
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {% for item in range(0,5) %}
+                                <a href="#" class="swiper-slide">
+                                    <source srcset="./img/other-sales.webp" />
+                                    <img src="./img/other-sales.jpg" alt=""/>
+                                </a>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-navigation">
+                            <button class="swiper-button-prev">
+                                {{ mixins.icon('arrow-left') }}
+                            </button>
+                            <button class="swiper-button-next">
+                                {{ mixins.icon('arrow-right') }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
