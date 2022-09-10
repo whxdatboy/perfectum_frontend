@@ -1,10 +1,120 @@
-{% set index = true %}
+{% set index = false %}
 {% set title = "Кухня бристоль" %}
 
 {% extends "layouts/_layout.twig" %}
 
 {% block content %}
 
+    <section class="detail">
+        <div class="sales-detail__hero">
+            <div class="sales-detail__hero-img">
+                <picture>
+                    <source srcset="./img/detail.webp" />
+                    <img src="./img/detail.jpg" alt="">
+                </picture>
+            </div>
+
+            <div class="sales-detail__content">
+                <div class="container">
+                    <h2 class="sales-detail__title">
+                        Бристоль
+                    </h2>
+
+                    <a href="/order" class="ui-btn ui-btn--yellow"> Заказать мебель </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="detail-about">
+                <h2 class="section__title">
+                    О кухне
+                </h2>
+
+                <div class="detail-about__text">
+                    На первом месте практичность и комфорт – так можно коротко охарактеризовать кухонный гарнитур Bristol. Мебель выполнена в соответствии со всеми канонами современного стиля: нейтральные цвета, простые лаконичные формы, следование правилам эргономики. Фасады в пластике Alvic. В конструкции предусмотрены закрытые навесные шкафы, напольные системы хранения, открытый стеллаж с полками. Вместо обычного обеденного стола – полуостров с одной опорой. Ещё одна характерная черта данного примера кухни – тотальная встроенность. На этой кухне всё необходимое всегда под рукой, чтобы вы могли готовить с удовольствием.
+                </div>
+
+                <div class="detail__info">
+                    <div class="detail__info-item">
+                        <div class="detail__info-title">СТИЛЬ</div>
+                        <div class="detail__info-text">Современный</div>
+                    </div>
+                    <div class="detail__info-item">
+                        <div class="detail__info-title">ФАСАД</div>
+                        <div class="detail__info-text">Пластик Alvic (Испания), витрина стекло тонированное</div>
+                    </div>
+                    <div class="detail__info-item">
+                        <div class="detail__info-title">КОРПУС</div>
+                        <div class="detail__info-text">ЛДСП EGGER (Австрия)</div>
+                    </div>
+                    <div class="detail__info-item">
+                        <div class="detail__info-title">СТОЛЕШНИЦА</div>
+                        <div class="detail__info-text">Акриловый камень</div>
+                    </div>
+                    <div class="detail__info-item">
+                        <div class="detail__info-title">ФУРНИТУРА</div>
+                        <div class="detail__info-text">Blum (Австрия)</div>
+                    </div>
+                    <div class="detail__info-item">
+                        <div class="detail__info-title">РУЧКИ</div>
+                        <div class="detail__info-text">Интегрированный профиль GOLA (Италия)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="price">
+            <div class="container">
+                <div class="price-column">
+                    <h2 class="section__title">
+                        Стоимость
+                    </h2>
+
+                    <div class="section__subtitle">
+                        В расчет включены корпуса, фасады, выдвижная фурнитура, мебельные опоры, подвесы и цоколь. В стоимость не входят: бытовая техника, столешница, лицевая фурнитура. Окончательная стоимость может отличаться в зависимости от выбранных материалов и аксессуаров и определяются менеджером индивидуально.
+                    </div>
+
+                    <div class="select price-select">
+                        <div class="select__head" data-active-price="">
+                            <span class="select__head-text">
+                                Выберите вариант
+                            </span>
+
+                            {{ mixins.icon('chevron-down') }}
+                        </div>
+                        <div class="select__list">
+                            <div class="select__item" data-price="200.000">
+                                Прямая
+                            </div>
+                            <div class="select__item" data-price="489.000">
+                                Угловая
+                            </div>
+                            <div class="select__item" data-price="50.000">
+                                П - образная
+                            </div>
+                        </div>
+
+                        <div class="select-price">
+                            от <span class="select-price__value" data-price-value="">
+                                200.000
+                            </span>
+                            ₽
+                        </div>
+                    </div>
+
+                    <a href="#" class="ui-btn ui-btn--transparent">
+                        Заказать
+                    </a>
+                </div>
+                <div class="price__img">
+                    <picture>
+                        <source srcset="./img/price-img.webp" />
+                        <img src="./img/price-img.jpg" alt="" />
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include './partials/_form.twig' %}
 
 
 {% endblock %}

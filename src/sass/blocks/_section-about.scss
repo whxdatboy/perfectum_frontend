@@ -7,6 +7,12 @@
     padding-top: 56px;
   }
 
+  &.md-visible {
+    @include r(1024px) {
+      margin-top: 150px;
+    }
+  }
+
   &__wrap {
     display: flex;
     justify-content: space-between;

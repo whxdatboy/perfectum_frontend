@@ -1,6 +1,14 @@
 .about {
   padding-top: 202px;
 
+  @include r(1024px) {
+    padding-top: 150px;
+  }
+
+  @include r(768px) {
+    padding-top: 130px;
+  }
+
   &__head {
     display: flex;
     justify-content: space-between;
@@ -58,6 +66,19 @@
     max-width: calc(100% / 5);
     width: 100%;
     margin-bottom: 65px;
+
+    @include r(1024px) {
+      max-width: calc(100% / 4);
+    }
+
+    @include r(768px) {
+      max-width: calc(100% / 2);
+    }
+
+    @include xs-screen {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
 
     &__img {
       img {

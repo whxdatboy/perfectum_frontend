@@ -1,0 +1,51 @@
+.cooperation {
+  padding-top: 202px;
+
+  @include r(1024px) {
+    padding-top: 150px;
+  }
+
+  &__desc {
+    margin-top: 50px;
+    column-count: 2;
+    column-gap: 50px;
+    font-size: 16px;
+    font-weight: 400;
+
+    @include r(768px) {
+      column-count: 1;
+    }
+  }
+
+  .sales-detail__hero {
+    @include r(768px) {
+      height: 413px;
+    }
+  }
+
+  .sales-detail__title {
+    @include r(768px) {
+      font-size: 32px;
+      text-align: left;
+      max-width: 289px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.contacts {
+  padding-top: 202px;
+
+  @include r(1024px) {
+    padding-top: 150px;
+  }
+
+  .section-contacts {
+    margin-bottom: 100px;
+
+    @include r(1024px) {
+      margin-bottom: 50px;
+    }
+  }
+}

@@ -1,6 +1,14 @@
 .order {
   padding-top: 202px;
 
+  @include r(1024px) {
+    padding-top: 150px;
+  }
+
+  @include r(768px) {
+    padding-top: 130px;
+  }
+
   &-block {
     .section-steps {
       padding-bottom: 100px;
@@ -12,6 +20,10 @@
     justify-content: space-between;
     flex-flow: wrap;
     margin-top: 55px;
+
+    @include r(768px) {
+      flex-flow: column;
+    }
   }
 
   &-item {
@@ -24,14 +36,29 @@
     overflow: hidden;
     @include ratio(550, 339);
 
+    @include r(768px) {
+      max-width: initial;
+      margin-bottom: 0;
+      margin-left: -30px;
+      width: calc(100% + 60px);
+    }
+
     &:nth-child(3),
     &:nth-child(7) {
       margin-top: 30px;
+
+      @include r(768px) {
+        margin-top: 0;
+      }
     }
 
     &:nth-child(4),
     &:nth-child(8) {
       margin-top: -30px;
+
+      @include r(768px) {
+        margin-top: 0;
+      }
     }
 
     &::after {
@@ -49,10 +76,20 @@
     &--less {
       @include ratio(550, 282);
 
+      @include r(768px) {
+        &::before {
+          display: none;
+        }
+      }
+
       &:nth-child(3),
       &:nth-child(7) {
         align-self: flex-end;
         margin-bottom: 30px;
+
+        @include r(768px) {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -63,6 +100,18 @@
       width: 100%;
       height: 100%;
       z-index: 1;
+      border-radius: 24px;
+      overflow: hidden;
+
+      @include r(768px) {
+        border-radius: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
     }
 
     &__name {
@@ -73,6 +122,18 @@
       font-size: 38px;
       padding-right: 70px;
       z-index: 3;
+
+      @include r(768px) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-right: 0;
+        font-size: 48px;
+      }
+
+      @include r(360px) {
+        font-size: 40px;
+      }
     }
   }
 }

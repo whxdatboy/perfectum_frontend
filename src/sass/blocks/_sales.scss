@@ -1,6 +1,14 @@
 .sales {
   padding-top: 202px;
 
+  @include r(1024px) {
+    padding-top: 150px;
+  }
+
+  @include r(768px) {
+    padding-top: 130px;
+  }
+
   &-grid {
     display: grid;
 
@@ -49,15 +57,33 @@
       max-width: 289px;
       margin: 0 auto;
     }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+
+    .container {
+      position: relative;
+      z-index: 4;
+    }
   }
 
   &__title {
-    font-weight: 900;
     font-size: 50px;
     line-height: 1;
     text-align: center;
     color: #fff;
     margin-bottom: 15px;
+    font-family: $russo;
+    letter-spacing: 0.07em;
   }
 
   &__info {

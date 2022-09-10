@@ -1,9 +1,51 @@
-<div class="modal modal--callback" data-modal="">
-  <div class="modal__inner dark" data-modal-inner="">
-    <div class="modal__close" data-modal-close="">
+<div class="modal modal--callback" data-modal="callback">
+  <div class="modal__inner" data-modal-inner="callback">
+    <div class="modal__close modal-close" data-modal-close="callback"></div>
 
-    </div>
+    <section class="form-callback">
+      <div class="container">
+        <div class="form-callback__img">
+          <picture>
+            <source data-srcset="./img/form-img.webp" />
+            <img class="lazy" data-src="./img/form-img.jpg" alt="" />
+          </picture>
+        </div>
 
+        <div class="form-callback__content">
+          <h2 class="section__title">
+            Оставьте заявку
+          </h2>
+
+          <div class="section__subtitle">
+            И мы перезвоним Вам обратно.
+          </div>
+
+          <form class="form">
+            <label for="" class="form-label">
+              <input type="text" class="form-input" placeholder="Имя" />
+            </label>
+
+            <label for="" class="form-label">
+              <input type="tel" class="form-input" placeholder="Номер телефона" />
+            </label>
+
+            <button class="ui-btn ui-btn--transparent" disabled>
+              Отправить {{ mixins.icon('arrow-right') }}
+            </button>
+
+            <label class="form-checkbox">
+              <input type="checkbox" name="policy" id="policy" />
+              <span class="checkbox">
+                        {{ mixins.icon('check') }}
+                    </span>
+              <span class="checkbox-text">
+                        Заполнив эту форму, вы даете согласие на обработку<br/>персональных данных в соответствии с законом
+                    </span>
+            </label>
+          </form>
+        </div>
+      </div>
+    </section>
 
   </div>
 </div>

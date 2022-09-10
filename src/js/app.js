@@ -10,6 +10,8 @@ import {inputMask} from "./modules/input-mask";
 import {initTabs} from "./modules/tabs";
 import {hambInit, tabsSelectInit} from "./modules/hamb";
 import {withBreakpoint} from "./constants";
+import {disableSubmit} from "./modules/checkbox";
+import {chooseSelect, priceSelectClose, priceSelectOpen} from "./modules/price-select";
 
 
 // import isTouch from './libs/detectTouch';
@@ -37,4 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('modal-open', () => {
     inputMask();
   })
+
+  disableSubmit()
+  if (document.querySelector('.form-checkbox')) {
+    document.querySelector('.form-checkbox').addEventListener('click', disableSubmit)
+  }
+
+  document.querySelector('.price-select').querySelector('.select__head').addEventListener('click', priceSelectOpen)
+
+  if (document.querySelector('.price-select')) {
+    document.addEventListener('click', priceSelectClose)
+    document.addEventListener('click', chooseSelect)
+  }
 })

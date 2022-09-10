@@ -1,0 +1,170 @@
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+
+  @include r(1259px) {
+    padding: 20px 40px;
+  }
+
+  @include r(767px) {
+    padding: 10px;
+  }
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    user-select: auto;
+    pointer-events: all;
+
+    .modal-wrap {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      animation: open-modal 0.2s linear;
+    }
+  }
+
+  &-wrap {
+    position: relative;
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+
+    @include r(767px) {
+      width: 100%;
+    }
+  }
+
+  &-content {
+    overflow-y: auto;
+
+    @include r(767px) {
+      height: 100%;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  &-close {
+    position: absolute;
+    right: 23px;
+    top: 23px;
+    display: block;
+    width: 39px;
+    height: 39px;
+    background: transparent;
+    transition: background 0.3s ease;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 5;
+
+    @include r(767px) {
+      top: 15px;
+      right: 15px;
+
+      @include retina() {
+        top: 0;
+        right: 15px;
+      }
+    }
+
+    &:hover {
+      // background: $darkred;
+      opacity: 0.7;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 22px;
+      height: 2px;
+      background: $textDark;
+      opacity: 1;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &-title {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 37px;
+
+    @include r(767px) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    position: absolute;
+    right: 3px;
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    position: absolute;
+    border-radius: 30px;
+    width: 8px;
+    background: var(--color-main);
+  }
+}
+
+.is-active {
+  transform: translate(0, 0);
+}
+
+@keyframes open-modal {
+  0% {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  1% {
+    display: block;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.policy-text a {
+  text-decoration: underline;
+
+  &:hover {
+    color: $textDark;
+    opacity: 0.8;
+  }
+}

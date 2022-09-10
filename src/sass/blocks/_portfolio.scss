@@ -1,6 +1,14 @@
 .portfolio {
   padding-top: 202px;
 
+  @include r(1024px) {
+    padding-top: 150px;
+  }
+
+  @include r(768px) {
+    padding-top: 130px;
+  }
+
   &-grid {
     display: flex;
     justify-content: space-between;
@@ -16,6 +24,20 @@
     margin-bottom: 50px;
     border-radius: 15px;
     overflow: hidden;
+
+    @include r(1024px) {
+      width: calc(100% / 4 - 10px);
+      margin-bottom: 10px;
+    }
+
+    @include r(768px) {
+      width: calc(100% / 2 - 10px);
+      margin-bottom: 15px;
+    }
+
+    @include xs-screen {
+      width: 100%;
+    }
 
     img {
       @include img-cover;

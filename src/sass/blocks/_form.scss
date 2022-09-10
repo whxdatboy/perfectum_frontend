@@ -1,0 +1,154 @@
+.form {
+  display: flex;
+  flex-flow: column;
+
+  &-label {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    font-size: 15px;
+
+    &::placeholder {
+      opacity: 1;
+      transition: opacity 0.25s ease;
+    }
+
+    &:active,
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &.error {
+      border-bottom: 1px solid rgb(159, 51, 51);
+      color: rgb(159, 51, 51);
+    }
+  }
+
+  .ui-btn {
+    margin-top: 40px;
+    max-width: 191px;
+    padding: 10px 0;
+    font-weight: 400;
+    margin-bottom: 17px;
+
+    &:disabled {
+      opacity: 0.3;
+    }
+
+    &:hover {
+      opacity: 0.55;
+    }
+
+    .icon {
+      color: transparent;
+      stroke: #000;
+      stroke-width: 1px;
+      font-size: 14px;
+      margin-left: 15px;
+    }
+  }
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    display: none;
+
+    &:checked + .checkbox {
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+
+}
+
+.checkbox {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-right: 10px;
+  flex-shrink: 0;
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    font-size: 10px;
+  }
+
+  &-text {
+    font-size: 10px;
+    user-select: none;
+  }
+}
+
+.form-callback {
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  @include r(768px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .section__subtitle {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+
+  &__content {
+    max-width: 456px;
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+
+    @include r(768px) {
+      padding-left: 20px;
+      padding-right: 0;
+    }
+
+    @include r(560px) {
+      padding-left: 0;
+    }
+  }
+
+  &__img {
+    position: relative;
+    @include ratio(1, 1);
+    max-width: 456px;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+
+    img {
+      @include coverdiv;
+      @include img-cover;
+    }
+
+    @include r(560px) {
+      display: none;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+}

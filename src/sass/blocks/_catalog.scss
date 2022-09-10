@@ -1,17 +1,41 @@
 .catalog {
   padding-top: 202px;
 
+  @include r(1024px) {
+    padding-top: 150px;
+  }
+
+  @include r(768px) {
+    padding-top: 140px;
+  }
+
   &-grid {
     display: flex;
     justify-content: space-between;
     flex-flow: wrap;
     margin-top: 80px;
+
+    @include r(768px) {
+      margin-top: 40px;
+    }
   }
 
   &-item {
     width: calc(100% / 4 - 28px);
     margin-bottom: 50px;
     box-shadow: -8px 8px 16px rgba(227, 227, 227, 0.2), 8px -8px 16px rgba(227, 227, 227, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.9), 8px 8px 20px rgba(227, 227, 227, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(227, 227, 227, 0.5);
+
+    @include r(1024px) {
+      width: calc(100% / 3 - 28px);
+    }
+
+    @include r(768px) {
+      width: calc(100% / 2 - 28px);
+    }
+
+    @include sm-screen {
+      width: 100%;
+    }
 
     &__img {
       position: relative;

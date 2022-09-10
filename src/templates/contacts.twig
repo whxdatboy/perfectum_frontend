@@ -5,6 +5,77 @@
 
 {% block content %}
 
+<div class="contacts">
+    {% include './partials/_form.twig' %}
+    <section class="section section-contacts">
+        <div class="container">
+            <h2 class="section__title">
+                Контактные данные
+            </h2>
+        </div>
+        <div class="container section-contacts__container">
+            <div class="map">
+                <script src="https://api-maps.yandex.ru/2.1/?apikey=f8d1318f-e2d1-48cd-b79a-2f0bfe1543f6&lang=ru_RU"
+                        type="text/javascript">
+                </script>
+                <script>
+                    const init = () => {
+                        const map = new ymaps.Map("map", {
+                            center: [51.62104909, 45.96929318],
+                            zoom: 16
+                        });
 
+                        map.geoObjects
+                            .add(new ymaps.Placemark([51.62112923, 45.97240454], {
+
+                            }, {
+                                preset: 'islands#icon',
+                                iconColor: '#0095b6'
+                            }))
+
+                        map.behaviors.disable('scrollZoom');
+                    }
+
+                    ymaps.ready(init);
+                </script>
+                <div class="map-content" id="map"></div>
+                <div class="map-block">
+                    <div class="map-block__row">
+                        <div class="map-block__title">
+                            Адрес
+                        </div>
+                        <div class="map-block__content">
+                            Саратов, Россия
+                        </div>
+                        <div class="map-block__subcontent">
+                            Вольский тракт 2А
+                        </div>
+                    </div>
+                    <div class="map-block__row">
+                        <div class="map-block__title">
+                            Телефон
+                        </div>
+                        <div class="map-block__content">
+                            <a href="tel:+79371403815">
+                                + 7 937 140 38 15
+                            </a>
+                        </div>
+                    </div>
+                    <div class="map-block__row">
+                        <div class="map-block__title">
+                            Электронная почта
+                        </div>
+                        <div class="map-block__content">
+                            <a href="mailto:fabrika-perfectum@yandex.ru">
+                                fabrika-perfectum@yandex.ru
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
 
 {% endblock %}

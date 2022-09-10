@@ -4,9 +4,17 @@
   margin-top: 24px;
   color: $color;
 
+  @include xs-screen {
+    display: none;
+  }
+
   &__item {
     margin-right: 35px;
     transition: opacity 0.35s ease-in-out;
+
+    @include r(768px) {
+      margin-right: 15px;
+    }
 
     &:hover {
       opacity: 0.75;
@@ -26,6 +34,10 @@
   &__link {
     position: relative;
     text-transform: uppercase;
+
+    @include r(768px) {
+      font-size: 12px;
+    }
 
     &::before {
       content: '';
