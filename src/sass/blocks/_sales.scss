@@ -10,12 +10,83 @@
   }
 
   &-grid {
+    //display: flex;
+    //flex-flow: wrap;
+    //justify-content: space-between;
+    max-width: 840px;
+    margin: 60px auto;
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 43px;
+    grid-row-gap: 43px;
 
+    @include r(1024px) {
+      display: flex;
+      flex-flow: column;
+      grid-row-gap: 23px;
+    }
   }
 
   &-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
 
+    &--1 {
+      max-width: 287px;
+      height: 366px;
+      grid-area: 1 / 1 / 3 / 2;
+
+      @include r(1024px) {
+        height: auto;
+        max-width: 100%;
+        width: 100%;
+        @include ratio(289, 138);
+      }
+    }
+
+    &--2, &--3 {
+      max-width: 238px;
+      height: 164px;
+
+      @include r(1024px) {
+        height: auto;
+        max-width: 100%;
+        width: 100%;
+        @include ratio(289, 138);
+      }
+    }
+
+    &--2 {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+
+    &--3 {
+      grid-area:  1 / 3 / 2 / 4;
+    }
+
+    &--4 {
+      height: 159px;
+      grid-area: 2 / 2 / 3 / 4;
+
+      @include r(1024px) {
+        height: auto;
+        max-width: 100%;
+        width: 100%;
+        @include ratio(289, 138);
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
 
@@ -32,6 +103,13 @@
       height: 100%;
       @include ratio(1920, 936);
       pointer-events: none;
+
+      @include r(768px) {
+
+        &::before {
+          display: none;
+        }
+      }
 
       img {
         position: absolute;
@@ -84,6 +162,10 @@
     margin-bottom: 15px;
     font-family: $russo;
     letter-spacing: 0.07em;
+
+    @include r(768px) {
+      font-size: 40px;
+    }
   }
 
   &__info {
@@ -110,6 +192,10 @@
   &__slider {
     max-width: calc(100% - 508px);
     overflow: hidden;
+
+    @include r(768px) {
+      display: none;
+    }
 
     .section__title {
       margin-bottom: 31px;
