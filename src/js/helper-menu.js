@@ -64,20 +64,15 @@ $(function () {
     // if (window.location.hostname === 'localhost') {
         pageWidget([
             'index',
-            'catalog',
-            'product-detail',
-            'basket',
-            'checkout',
-            'contacts',
-            'customers',
             'about',
-            'login',
-            'login-email',
-            'login-sec',
-            'login-sms',
-            'lk',
-            'favorite',
-            '404'
+            'catalog',
+            'contacts',
+            'cooperation',
+            'kitchen-detail',
+            'order',
+            'portfolio',
+            'sales',
+            'sales-detail'
         ]);
     // }
 });

@@ -45,9 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.form-checkbox').addEventListener('click', disableSubmit)
   }
 
-  document.querySelector('.price-select').querySelector('.select__head').addEventListener('click', priceSelectOpen)
-
   if (document.querySelector('.price-select')) {
+    document.querySelector('.price-select').querySelector('.select__head').addEventListener('click', priceSelectOpen)
     document.addEventListener('click', priceSelectClose)
     document.addEventListener('click', chooseSelect)
   }
