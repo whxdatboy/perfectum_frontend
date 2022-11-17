@@ -25,6 +25,38 @@
     }
   }
 
+  .sales-detail__hero {
+    margin: 60px auto 0;
+    max-width: 1347px;
+    width: 100%;
+  }
+
+  &__slider {
+    margin: 65px 0;
+
+    @include sm-screen {
+      margin: 35px 0;
+    }
+
+    .swiper {
+      &-slide {
+        position: relative;
+        max-width: max(340px, 80%);
+        margin-right: 15px;
+        @include ratio(910, 600);
+
+        @include sm-screen {
+          max-width: 80%;
+        }
+
+        img {
+          @include coverdiv;
+          @include img-cover;
+        }
+      }
+    }
+  }
+
   &__info {
     margin-top: 40px;
     display: flex;

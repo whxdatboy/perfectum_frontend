@@ -83,4 +83,42 @@ export function initSliders () {
       }
     })
   })
+
+  document.querySelectorAll('.detail__slider').forEach(el => {
+    const slider = el.querySelector('.swiper');
+
+    const swiper = new Swiper(slider, {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      loop: true,
+      loopedSlides: slider.querySelectorAll('.swiper-slide').length,
+      on: {
+        afterInit: (swiper) => {
+          new LazyLoad({
+            container: swiper.el,
+            cancel_on_exit: false
+          });
+        }
+      }
+    })
+  })
+
+  document.querySelectorAll('.colors__slider').forEach(el => {
+    const slider = el.querySelector('.swiper');
+
+    const swiper = new Swiper(slider, {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      loop: true,
+      loopedSlides: slider.querySelectorAll('.swiper-slide').length,
+      on: {
+        afterInit: (swiper) => {
+          new LazyLoad({
+            container: swiper.el,
+            cancel_on_exit: false
+          });
+        }
+      }
+    })
+  })
 }

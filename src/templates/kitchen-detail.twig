@@ -61,6 +61,34 @@
                     </div>
                 </div>
             </div>
+
+{#   Заказчик сказал, что нужно только в "мебель на заказ", отдельной страницы нет, пусть тут лежит #}
+            <div class="detail__slider">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <picture>
+                                <source data-srcset="./img/classic-1.webp" />
+                                <img class="lazy" data-src="./img/classic-1.jpg" alt="" />
+                            </picture>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <picture>
+                                <source data-srcset="./img/classic-1.webp" />
+                                <img class="lazy" data-src="./img/classic-1.jpg" alt="" />
+                            </picture>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <picture>
+                                <source data-srcset="./img/classic-1.webp" />
+                                <img class="lazy" data-src="./img/classic-1.jpg" alt="" />
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="price">
             <div class="container">
@@ -72,6 +100,8 @@
                     <div class="section__subtitle">
                         В расчет включены корпуса, фасады, выдвижная фурнитура, мебельные опоры, подвесы и цоколь. В стоимость не входят: бытовая техника, столешница, лицевая фурнитура. Окончательная стоимость может отличаться в зависимости от выбранных материалов и аксессуаров и определяются менеджером индивидуально.
                     </div>
+
+                {# Селект убрать только для раздел кухонь #}
 
                     <div class="select price-select">
                         <div class="select__head" data-active-price="">
@@ -101,6 +131,13 @@
                         </div>
                     </div>
 
+                    <div class="select-price">
+                        от <span class="select-price__value" data-price-value="">
+                                200.000
+                            </span>
+                        ₽
+                    </div>
+
                     <a href="#" class="ui-btn ui-btn--transparent">
                         Заказать
                     </a>
@@ -110,6 +147,33 @@
                         <source srcset="./img/price-img.webp" />
                         <img src="./img/price-img.jpg" alt="" />
                     </picture>
+                </div>
+            </div>
+        </div>
+{# Раздел фасады #}
+{#    Добавить в карточке фасада возможность дополнительных фото сейчас их можно добавить только в описание    #}
+        <div class="colors">
+            <div class="container">
+                <h2 class="text-center">Примеры цветовых решений</h2>
+
+                <div class="colors__slider">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {% for item in range(0, 9) %}
+                                <div class="swiper-slide">
+                                    <div class="colors__slider-img">
+                                        <picture>
+                                            <source data-srcset="./img/order-item-{{ loop.index }}.webp" />
+                                            <img class="lazy" data-src="./img/order-item-{{ loop.index }}.jpg" alt="" />
+                                        </picture>
+                                    </div>
+                                    <div class="colors__slider-desc text-center">
+                                        Цвет {{ loop.index }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

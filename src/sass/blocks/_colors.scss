@@ -1,0 +1,47 @@
+.colors {
+  margin: 65px 0;
+  padding: 95px 0;
+  background-color: #141414;
+
+  h2 {
+    color: #fff;
+  }
+
+  &__slider {
+    margin-top: 35px;
+
+    &-img {
+      position: relative;
+      @include ratio(200, 300);
+
+      img {
+        @include img-cover;
+        @include coverdiv;
+        user-select: none;
+      }
+    }
+
+    &-desc {
+      margin-top: 15px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .swiper {
+      &-slide {
+        max-width: calc(100% / 5 - 5px);
+        margin-right: 20px;
+
+        @include sm-screen {
+          max-width: calc(100% / 3 - 5px);
+          margin-right: 14px;
+        }
+
+        @include xs-screen {
+          max-width: calc(100% / 2 - 10px);
+        }
+      }
+    }
+  }
+}
