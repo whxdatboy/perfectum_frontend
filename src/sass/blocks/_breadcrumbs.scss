@@ -3,11 +3,13 @@
 
   &-list {
     display: flex;
+    flex-flow: wrap;
   }
 
   &-item {
     position: relative;
     margin-right: 24px;
+    margin-bottom: 7px;
 
     a {
       text-transform: uppercase;

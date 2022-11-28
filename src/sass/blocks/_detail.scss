@@ -54,6 +54,56 @@
           @include img-cover;
         }
       }
+
+      &-button {
+        &-prev,
+        &-next {
+          position: absolute;
+          top: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+          width: 54px;
+          height: 54px;
+          border-radius: 50%;
+          background-color: #fff;
+          transform: translateY(-50%);
+          box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);
+
+          @include r(1024px) {
+            width: 44px;
+            height: 44px;
+          }
+
+          .icon {
+            fill: transparent;
+            stroke: #000;
+            stroke-width: 2px;
+            font-size: 16px;
+
+            @include r(1024px) {
+              font-size: 12px;
+            }
+          }
+        }
+
+        &-prev {
+          left: 15px;
+
+          @include r(1024px) {
+            left: 7px;
+          }
+        }
+
+        &-next {
+          right: 15px;
+
+          @include r(1024px) {
+            right: 7px;
+          }
+        }
+      }
     }
   }
 

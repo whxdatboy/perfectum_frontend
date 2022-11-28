@@ -86,8 +86,15 @@ export function initSliders () {
 
   document.querySelectorAll('.detail__slider').forEach(el => {
     const slider = el.querySelector('.swiper');
+    const prevBtn = el.querySelector('.swiper-button-prev')
+    const nextBtn = el.querySelector('.swiper-button-next')
 
     const swiper = new Swiper(slider, {
+      modules: [Navigation],
+      navigation: {
+        prevEl: prevBtn,
+        nextEl: nextBtn
+      },
       slidesPerView: 'auto',
       centeredSlides: true,
       loop: true,
