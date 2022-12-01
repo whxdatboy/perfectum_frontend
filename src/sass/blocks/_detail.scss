@@ -1,14 +1,4 @@
 .detail {
-  padding-top: 202px;
-
-  @include r(1024px) {
-    padding-top: 150px;
-  }
-
-  @include r(768px) {
-    padding-top: 130px;
-  }
-
   .sales-detail__hero {
     margin-top: 0;
   }
@@ -70,6 +60,7 @@
           background-color: #fff;
           transform: translateY(-50%);
           box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
 
           @include r(1024px) {
             width: 44px;

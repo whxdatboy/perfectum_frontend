@@ -33,7 +33,16 @@ body {
 }
 
 .main {
+  padding-top: 202px;
   flex: 1 0 auto;
+
+  @include r(1024px) {
+    padding-top: 150px;
+  }
+
+  @include r(768px) {
+    padding-top: 140px;
+  }
   //background-color: #fff;
   @include r(1133px) {
     background-color: #fff;

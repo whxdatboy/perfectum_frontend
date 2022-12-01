@@ -1,13 +1,5 @@
 .sales {
-  padding-top: 202px;
-
-  @include r(1024px) {
-    padding-top: 150px;
-  }
-
-  @include r(768px) {
-    padding-top: 130px;
-  }
+  padding-top: 0;
 
   &-grid {
     //display: flex;
@@ -91,8 +83,6 @@
 }
 
 .sales-detail {
-  padding-top: 202px;
-
   &__hero {
     position: relative;
     margin-top: 60px;

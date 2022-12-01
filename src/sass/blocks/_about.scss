@@ -1,14 +1,4 @@
 .about {
-  padding-top: 202px;
-
-  @include r(1024px) {
-    padding-top: 150px;
-  }
-
-  @include r(768px) {
-    padding-top: 130px;
-  }
-
   &__head {
     display: flex;
     justify-content: space-between;

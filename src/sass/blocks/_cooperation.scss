@@ -1,10 +1,4 @@
 .cooperation {
-  padding-top: 202px;
-
-  @include r(1024px) {
-    padding-top: 150px;
-  }
-
   &__desc {
     margin-top: 50px;
     column-count: 2;
@@ -35,12 +29,6 @@
 }
 
 .contacts {
-  padding-top: 202px;
-
-  @include r(1024px) {
-    padding-top: 150px;
-  }
-
   .section-contacts {
     margin-bottom: 100px;
 
