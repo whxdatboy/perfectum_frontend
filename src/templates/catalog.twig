@@ -10,70 +10,37 @@
 
 {% block content %}
     {% include './partials/_breadcrubms.twig' %}
-<section class="catalog">
+    <section class="catalog">
 
-    <div class="container">
-        <h1 class="section__title">
-            Выберите Вашу кухню
-        </h1>
+        <div class="container">
+            <h1 class="section__title">
+                Выберите Вашу кухню
+            </h1>
 
-        <ul class="filter">
-           <li class="filter__item is-active">
-               <a href="#" class="filter__link">
-                   Все
-               </a>
-           </li>
-           <li class="filter__item">
-               <a href="#" class="filter__link">
-                   Классика
-               </a>
-           </li>
-           <li class="filter__item">
-               <a href="#" class="filter__link">
-                   Неоклассика
-               </a>
-           </li>
-           <li class="filter__item">
-               <a href="#" class="filter__link">
-                   Модерн
-               </a>
-           </li>
-        </ul>
+            <ul class="filter">
+                <li class="filter__item is-active">
+                    <a href="#" class="filter__link">
+                        Все
+                    </a>
+                </li>
+                <li class="filter__item">
+                    <a href="#" class="filter__link">
+                        Классика
+                    </a>
+                </li>
+                <li class="filter__item">
+                    <a href="#" class="filter__link">
+                        Неоклассика
+                    </a>
+                </li>
+                <li class="filter__item">
+                    <a href="#" class="filter__link">
+                        Модерн
+                    </a>
+                </li>
+            </ul>
 
-        <div class="catalog-grid">
-            <a href="#" class="catalog-item">
-                <div class="catalog-item__img">
-                    <picture>
-                        <source srcset="./img/catalog-1.webp" />
-                        <img src="./img/catalog-1.jpg" alt="" />
-                    </picture>
-                </div>
-                <div class="catalog-item__bottom">
-                    <div class="catalog-item__name">
-                        Арко
-                    </div>
-                    <div class="catalog-item__price">
-                        от 70.000 ₽
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="catalog-item">
-                <div class="catalog-item__img">
-                    <picture>
-                        <source srcset="./img/catalog-2.webp" />
-                        <img src="./img/catalog-2.jpg" alt="" />
-                    </picture>
-                </div>
-                <div class="catalog-item__bottom">
-                    <div class="catalog-item__name">
-                        Бристоль
-                    </div>
-                    <div class="catalog-item__price">
-                        от 70.000 ₽
-                    </div>
-                </div>
-            </a>
-            {% for item in range(0, 14) %}
+            <div class="catalog-grid">
                 <a href="#" class="catalog-item">
                     <div class="catalog-item__img">
                         <picture>
@@ -90,10 +57,43 @@
                         </div>
                     </div>
                 </a>
-            {% endfor %}
+                <a href="#" class="catalog-item">
+                    <div class="catalog-item__img">
+                        <picture>
+                            <source srcset="./img/catalog-2.webp" />
+                            <img src="./img/catalog-2.jpg" alt="" />
+                        </picture>
+                    </div>
+                    <div class="catalog-item__bottom">
+                        <div class="catalog-item__name">
+                            Бристоль
+                        </div>
+                        <div class="catalog-item__price">
+                            от 70.000 ₽
+                        </div>
+                    </div>
+                </a>
+                {% for item in range(0, 14) %}
+                    <a href="#" class="catalog-item">
+                        <div class="catalog-item__img">
+                            <picture>
+                                <source srcset="./img/catalog-1.webp" />
+                                <img src="./img/catalog-1.jpg" alt="" />
+                            </picture>
+                        </div>
+                        <div class="catalog-item__bottom">
+                            <div class="catalog-item__name">
+                                Арко
+                            </div>
+                            <div class="catalog-item__price">
+                                от 70.000 ₽
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
     {% include './partials/_form.twig' %}
 
 {% endblock %}

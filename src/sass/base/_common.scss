@@ -33,8 +33,18 @@ body {
 }
 
 .main {
-  padding-top: 202px;
   flex: 1 0 auto;
+  //background-color: #fff;
+  @include r(1133px) {
+    background-color: #fff;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+}
+
+.wrap {
+  padding-top: 202px;
 
   @include r(1024px) {
     padding-top: 150px;
@@ -43,13 +53,6 @@ body {
   @include r(768px) {
     padding-top: 140px;
   }
-  //background-color: #fff;
-  @include r(1133px) {
-    background-color: #fff;
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
-  }
-
 }
 
 button {
